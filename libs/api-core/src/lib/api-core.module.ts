@@ -4,6 +4,9 @@ import { ConfigModule } from '@nestjs/config'
 import { configuration } from './config/configuration'
 import { validationSchema } from './config/validation'
 
+import { GraphQLModule } from '@nestjs/graphql'
+import { ApiCoreResolver } from './api-core.resolver'
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -11,9 +14,14 @@ import { validationSchema } from './config/validation'
       load: [configuration],
       validationSchema,
     }),
+    GraphQLModule.forRoot({
+      debug: false,
+      autoSchemaFile: true,
+      playground: true,
+    }),
   ],
   controllers: [],
-  providers: [],
+  providers: [ApiCoreResolver],
   exports: [],
 })
 export class ApiCoreModule {}

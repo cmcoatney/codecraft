@@ -15,7 +15,7 @@
     "@nestjs/graphql": "^9.1.2",
     "@nestjs/platform-express": "^8.0.0",
     "apollo-server-express": "^3.5.0",
-    "graphql": "^16.1.0",
+    "graphql": "^15.8.0",
     "graphql-tools": "^8.2.0",
     "joi": "^17.5.0",
     "reflect-metadata": "^0.1.13",
