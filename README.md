@@ -9,13 +9,62 @@ This project was generated using [Nx](https://nx.dev) following Bram Borggreve's
 
 See [installation notes](#installation-notes) This project is built using [Git-Flow](https://github.com/nvie/gitflow)
 
+[Presented using Heroku](https://codecraft-nx.herokuapp.com/) on [Heroku Repo](https://git.heroku.com/codecraft-nx.git)
+
+- [Get an account](https://signup.heroku.com/)
+- [Install CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+## Heroku Setup
+Verify Installation:
+
+```zsh
+$ heroku -v
+```
+
+Login to Heroku
+
+```zsh
+$ heroku login
+```
+
+Create app
+
+```zsh
+$ heroku create codecraft-nx
+```
+
+Push to Git
+
+```zsh
+$ git push
+```
+
+Push to Heroku
+
+```zsh
+$ git push heroku main
+```
+
+Verify Installation
+Since Heroku is deployed in production mode, the playground will not function as it does locally.
+Installation can be verified by hitting the endpoint directly:
+```zsh
+curl -XPOST \
+     -H "Content-Type: application/json" \
+     --data ' { "query": "query { uptime }"  }' \
+     https://codecraft-nx.herokuapp.com/graphql
+```
+
+Should return something like...
+```zsh
+{"data":{"uptime":439.593632003}}
+```
+
 <p style="text-align: center;">
 <img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="300">
 &nbsp;
 <img src="https://avatars.githubusercontent.com/u/65322676?s=200&v=4">
 </p>
-
-
 
 <br />
 
