@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
 import { CreateSnippetSeriesInputDTO } from './dto/create-snippet-series-input.dto'
+import { UpdateSnippetSeriesInputDTO } from './dto/update-snippet-series-input.dto'
 import { SnippetSeries } from './models/snippet-series'
 
 @Injectable()
@@ -26,5 +27,24 @@ export class SnippetSeriesService {
 
     this.items.push(newSnippetSeries)
     return newSnippetSeries
+  }
+
+  public updateSnippetSeries(id: string, input: UpdateSnippetSeriesInputDTO) {
+    const series = this.snippet(id)
+
+    const updated: SnippetSeries = {
+      ...series,
+      ...input,
+    }
+
+    // Imperative approach to updating item in array...
+    this.items = this.items.map((item) => {
+      if (item.id === id) {
+        return updated
+      }
+      return item
+    })
+
+    return updated
   }
 }
