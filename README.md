@@ -15,7 +15,8 @@ See [installation notes](#installation-notes) This project is built using [Git-F
 - [Install CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 ## Heroku Setup
-Verify Installation:
+
+### Heroku Installation:
 
 ```zsh
 $ heroku -v
@@ -45,9 +46,11 @@ Push to Heroku
 $ git push heroku main
 ```
 
-Verify Installation
-Since Heroku is deployed in production mode, the playground will not function as it does locally.
-Installation can be verified by hitting the endpoint directly:
+### Verify Installation
+
+1. CURL  
+   Installation can be verified by hitting the endpoint directly:
+
 ```zsh
 curl -XPOST \
      -H "Content-Type: application/json" \
@@ -56,8 +59,24 @@ curl -XPOST \
 ```
 
 Should return something like...
+
 ```zsh
 {"data":{"uptime":439.593632003}}
+```
+
+2. PLAYGROUND  
+   Playground has been enabled in production mode from api-core.module.
+   (There may be an initial error on the right. Add query below to test )
+
+   - Open [playground](https://codecraft-nx.herokuapp.com/graphql) on Heroku
+   - Add query in left panel
+   - Click play button (center)
+
+```zsh
+query {
+  uptime
+}
+
 ```
 
 <p style="text-align: center;">
