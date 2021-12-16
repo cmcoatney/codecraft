@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
-    "api-core": "libs/api-core"
+    "api-core": "libs/api-core",
+    "snippet": "libs/snippet"
   }
 }

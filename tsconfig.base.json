@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@codecraft/api-core": ["libs/api-core/src/index.ts"]
+      "@codecraft/api-core": ["libs/api-core/src/index.ts"],
+      "@codecraft/snippet": ["libs/snippet/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
