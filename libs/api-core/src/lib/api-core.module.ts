@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common'
-
 import { ConfigModule } from '@nestjs/config'
+import { GraphQLModule } from '@nestjs/graphql'
+
+import { ApiCoreResolver } from './api-core.resolver'
 import { configuration } from './config/configuration'
 import { validationSchema } from './config/validation'
 
-import { GraphQLModule } from '@nestjs/graphql'
-import { ApiCoreResolver } from './api-core.resolver'
+
 
 @Module({
   imports: [
@@ -16,6 +17,8 @@ import { ApiCoreResolver } from './api-core.resolver'
     }),
     GraphQLModule.forRoot({
       autoSchemaFile: true,
+      debug: true,
+      sortSchema: true,
       playground: true,
     }),
   ],

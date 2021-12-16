@@ -1,11 +1,17 @@
-import { Resolver, Query } from '@nestjs/graphql'
+import { Resolver, Query, Args } from '@nestjs/graphql'
 
-import { Snippet } from './models/snippet'
+import { SnippetSeries } from './models/snippet-series'
 
 @Resolver()
 export class SnippetSeriesResolver {
-  @Query(() => [Snippet])
+  @Query(() => [SnippetSeries], { nullable: true })
   snippets() {
     return []
+  }
+
+  @Query(() => SnippetSeries, { nullable: true })
+  snippet(@Args('id') id: string) {
+    console.log(id)
+    return null
   }
 }

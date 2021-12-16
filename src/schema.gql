@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  snippets: [Snippet!]!
+  uptime: Float!
+}
+
+type Snippet {
+  content: String
+  description: String
+  id: String
+  imageUrl: String
+  snippets: [Snippet!]
+  title: String
+}
