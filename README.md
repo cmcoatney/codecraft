@@ -1,9 +1,19 @@
 # Codecraft
 
-This project was generated using [Nx](https://nx.dev).
+This project was generated using [Nx](https://nx.dev) following Bram Borggreve's (beeman 🐝) NXPM stack
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+- [NX API Guide](https://dev.to/beeman/introduction-to-building-api-s-with-nestjs-and-nrwl-nx-1l2b)
+- [Video Guide](https://www.youtube.com/watch?v=J32s6Dm41bE)
 
+- [NXPM](https://nxpm.dev/)
+
+See [installation notes](#installation-notes)
+
+<p style="text-align: center;">
+<img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="300">
+&nbsp;
+<img src="https://avatars.githubusercontent.com/u/65322676?s=200&v=4">
+</p>
 🔎 **Smart, Extensible Build Framework**
 
 ## Adding capabilities to your workspace
@@ -89,13 +99,15 @@ Teams using Nx gain the advantage of building full-stack applications with their
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
 
-Installation Notes:
+# Installation Notes
 
-GraphQL compat issue...
+## GraphQL compat issue
 
 | Specifically, GraphQL@16 changed the gqaphql function, as called from within graphqlImpl, to only support args without a schema
 
-Resolve:
+### Resolve:
+
+We have to downgrade graphql to below v16:
 
 ```zsh
 yarn upgrade graphql@^15.8.0
