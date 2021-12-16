@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common'
+
+import { CreateSnippetSeriesInputDTO } from './dto/create-snippet-series-input.dto'
 import { SnippetSeries } from './models/snippet-series'
 
 @Injectable()
@@ -14,5 +16,15 @@ export class SnippetSeriesService {
 
   public snippet(id: string) {
     return this.items.find((item) => item.id === id)
+  }
+
+  public createSnippetSeries(input: CreateSnippetSeriesInputDTO) {
+    const newSnippetSeries: SnippetSeries = {
+      id: Date.now().toString(),
+      ...input,
+    }
+
+    this.items.push(newSnippetSeries)
+    return newSnippetSeries
   }
 }

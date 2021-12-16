@@ -1,4 +1,5 @@
-import { Resolver, Query, Args } from '@nestjs/graphql'
+import { Resolver, Query, Args, Mutation } from '@nestjs/graphql'
+import { CreateSnippetSeriesInputDTO } from './dto/create-snippet-series-input.dto';
 
 import { SnippetSeries } from './models/snippet-series'
 import { SnippetSeriesService } from './snippet-series.service'
@@ -16,5 +17,10 @@ export class SnippetSeriesResolver {
   snippet(@Args('id') id: string) {
     console.log(id)
     return this.service.snippet(id);
+  }
+
+  @Mutation(() => SnippetSeries, { nullable: true })
+  createSnippetSeries(@Args('input') input: CreateSnippetSeriesInputDTO) {
+    return this.service.createSnippetSeries(input)
   }
 }
