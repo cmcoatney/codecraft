@@ -7,13 +7,18 @@ This project was generated using [Nx](https://nx.dev) following Bram Borggreve's
 
 - [NXPM](https://nxpm.dev/)
 
-See [installation notes](#installation-notes)
+See [installation notes](#installation-notes) This project is built using [Git-Flow](https://github.com/nvie/gitflow)
 
 <p style="text-align: center;">
 <img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="300">
 &nbsp;
 <img src="https://avatars.githubusercontent.com/u/65322676?s=200&v=4">
 </p>
+
+
+
+<br />
+
 🔎 **Smart, Extensible Build Framework**
 
 ## Adding capabilities to your workspace
