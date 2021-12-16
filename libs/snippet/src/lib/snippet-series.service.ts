@@ -47,4 +47,15 @@ export class SnippetSeriesService {
 
     return updated
   }
+
+  public deleteSnippetSeries(id: string) {
+    const series = this.snippet(id)
+
+    if (!series) {
+      return false
+    }
+
+    this.items = [...this.items.filter((item: SnippetSeries) => item.id !== id)]
+    return true
+  }
 }

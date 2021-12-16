@@ -1,6 +1,6 @@
 import { Resolver, Query, Args, Mutation } from '@nestjs/graphql'
-import { CreateSnippetSeriesInputDTO } from './dto/create-snippet-series-input.dto';
-import { UpdateSnippetSeriesInputDTO } from './dto/update-snippet-series-input.dto';
+import { CreateSnippetSeriesInputDTO } from './dto/create-snippet-series-input.dto'
+import { UpdateSnippetSeriesInputDTO } from './dto/update-snippet-series-input.dto'
 
 import { SnippetSeries } from './models/snippet-series'
 import { SnippetSeriesService } from './snippet-series.service'
@@ -26,9 +26,12 @@ export class SnippetSeriesResolver {
   }
 
   @Mutation(() => SnippetSeries, { nullable: true })
-  updateSnippetSeries(
-    @Args('id') id: string,
-    @Args('input') input: UpdateSnippetSeriesInputDTO) {
+  updateSnippetSeries(@Args('id') id: string, @Args('input') input: UpdateSnippetSeriesInputDTO) {
     return this.service.updateSnippetSeries(id, input)
+  }
+
+  @Mutation(() => Boolean, { nullable: true })
+  deleteSnippetSeries(@Args('id') id: string) {
+    return this.service.deleteSnippetSeries(id)
   }
 }
