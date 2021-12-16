@@ -15,7 +15,6 @@ import { ApiCoreResolver } from './api-core.resolver'
       validationSchema,
     }),
     GraphQLModule.forRoot({
-      debug: false,
       autoSchemaFile: true,
       playground: true,
     }),
