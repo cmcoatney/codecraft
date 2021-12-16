@@ -4,9 +4,10 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 
 import { ApiCoreModule } from '@codecraft/api-core'
+import { SnippetModule } from '@codecraft/snippet'
 
 @Module({
-  imports: [ApiCoreModule],
+  imports: [ApiCoreModule, SnippetModule],
   controllers: [AppController],
   providers: [AppService],
 })
