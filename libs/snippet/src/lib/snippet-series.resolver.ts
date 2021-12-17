@@ -10,14 +10,14 @@ export class SnippetSeriesResolver {
   constructor(private readonly service: SnippetSeriesService) {}
 
   @Query(() => [SnippetSeries], { nullable: true })
-  snippets() {
-    return this.service.snippets()
+  snippetsSeries() {
+    return this.service.snippetsSeries()
   }
 
   @Query(() => SnippetSeries, { nullable: true })
-  snippet(@Args('id') id: string) {
+  snippetSeries(@Args('id') id: string) {
     console.log(id)
-    return this.service.snippet(id)
+    return this.service.snippetSeries(id)
   }
 
   @Mutation(() => SnippetSeries, { nullable: true })

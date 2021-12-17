@@ -79,6 +79,17 @@ query {
 
 ```
 
+# Saving Playground Using Chrome Ext
+(This is tempermental but can be made to work)
+- [Add LocalStorage Manager Extension to Chrome](https://chrome.google.com/webstore/detail/localstorage-manager/fkhoimdhngkiicbjobkinobjkoefhkap/related)
+- Export the Local Storage object from the playground ("graphql-playground" ...) to a file
+- Copy the file over to the destination
+- Copy the file contents to clipboard
+- Use the Import option in the Chrome extension
+- Refresh the playground to see your restored tabs
+
+- [View this playground](tools/CodecraftPlayground.txt)
+
 <p style="text-align: center;">
 <img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="300">
 &nbsp;

@@ -17,6 +17,4 @@ export class Snippet {
   @Field({ nullable: true })
   imageUrl?: string
 
-  @Field(() => [Snippet], { nullable: true })
-  snippets?: Snippet[]
 }

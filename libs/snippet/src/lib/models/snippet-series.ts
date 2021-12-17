@@ -1,5 +1,7 @@
 import { Field, ObjectType } from '@nestjs/graphql'
 
+import { Snippet } from './snippet'
+
 @ObjectType()
 export class SnippetSeries {
   @Field({ nullable: true })
@@ -14,5 +16,6 @@ export class SnippetSeries {
   @Field({ nullable: true })
   imageUrl?: string
 
-
+  @Field(() => [Snippet], { nullable: true })
+  snippets?: Snippet[]
 }

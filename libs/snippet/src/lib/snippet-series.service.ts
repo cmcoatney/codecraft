@@ -7,15 +7,35 @@ import { SnippetSeries } from './models/snippet-series'
 @Injectable()
 export class SnippetSeriesService {
   items: SnippetSeries[] = [
-    { id: 'es7-fibonacci', title: 'Fibonacci Whiteboard in One Line of Code!' },
+    {
+      id: 'es7-fibonacci',
+      title: 'Fibonacci Whiteboard in One Line of Code!',
+      snippets: [
+        {
+          id: 'snippet-1',
+          title: 'Snippet #1',
+          content: '```js\nfor(;;);\n```\n',
+        },
+        {
+          id: 'snippet-2',
+          title: 'Snippet #2',
+          content: '```js\nwhile(onBreak) do ;\n```\n',
+        },
+        {
+          id: 'snippet-3',
+          title: 'Snippet #3',
+          content: '```js\nfor(;;);\n```\n',
+        },
+      ],
+    },
     { id: 'es6-fibonacci', title: 'Fibonacci Whiteboard The ES6 Way' },
   ]
 
-  public snippets() {
+  public snippetsSeries() {
     return this.items
   }
 
-  public snippet(id: string) {
+  public snippetSeries(id: string) {
     return this.items.find((item) => item.id === id)
   }
 
@@ -30,7 +50,7 @@ export class SnippetSeriesService {
   }
 
   public updateSnippetSeries(id: string, input: UpdateSnippetSeriesInputDTO) {
-    const series = this.snippet(id)
+    const series = this.snippetSeries(id)
 
     const updated: SnippetSeries = {
       ...series,
@@ -49,7 +69,7 @@ export class SnippetSeriesService {
   }
 
   public deleteSnippetSeries(id: string) {
-    const series = this.snippet(id)
+    const series = this.snippetSeries(id)
 
     if (!series) {
       return false
