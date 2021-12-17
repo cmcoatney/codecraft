@@ -130,4 +130,17 @@ export class SnippetSeriesService {
 
     return updated
   }
+
+  public deleteSnippet(seriesId: string, snippetId: string) {
+    const series = this.snippetSeries(seriesId)
+    if (!series) {
+      return false
+    }
+    const snippet = series.snippets.find((item) => item.id === snippetId)
+    if (!snippet) {
+      return false
+    }
+    series.snippets = series.snippets.filter((item: Snippet) => item.id !== snippetId)
+    return true
+  }
 }

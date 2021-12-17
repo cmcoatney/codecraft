@@ -22,4 +22,9 @@ export class SnippetResolver {
   ) {
     return this.service.updateSnippet(seriesId, snippetId, input)
   }
+
+  @Mutation(() => Boolean, { nullable: true })
+  deleteSnippet(@Args('seriesId') seriesId: string, @Args('snippetId') snippetId: string) {
+    return this.service.deleteSnippet(seriesId, snippetId)
+  }
 }
